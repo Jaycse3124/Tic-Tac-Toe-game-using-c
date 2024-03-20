@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+// Function to display the Tic-Tac-Toe board
+void displayBoard(char board[3][3]) {
+    for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+            printf("%c ", board[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Function to check if a player has won
+int checkWin(char board[3][3], char player) {
+    // Check rows, columns, and diagonals for a win
+    // Your secret winning logic goes here
+
+    return 0; // Placeholder
+}
+
+int main() {
+    char board[3][3] = { {' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '} };
+    char currentPlayer = 'X';
+
+    printf("Welcome to Tic-Tac-Toe!\n");
+
+    while (1) {
+        displayBoard(board);
+
+        int row, col;
+        printf("Player %c, enter row (0-2) and column (0-2): ", currentPlayer);
+        scanf("%d %d", &row, &col);
+
+        // Validate input and update the board
+        // Your secret input validation and board update logic here
+
+        if (checkWin(board, currentPlayer)) {
+            printf("Player %c wins!\n", currentPlayer);
+            break;
+        }
+
+        // Switch players
+        currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+    }
+
+    // GitHub username: jaycse3124
+    // Feel free to customize and enhance this code further!
+    return 0;
+}
